@@ -1,38 +1,43 @@
 <!-- JS -->
 <script lang="ts">
+  import Article from './components/Article.svelte'
+  import Divider from './components/Divider.svelte'
   import Header from './components/Header.svelte'
   import Footer from './components/Footer.svelte'
+  import Aside from './components/Aside.svelte'
 
-  let name: string = 'clayton'
-  let times: number = 0
-
-  function onClick() {
-    times++
-  }
+  const year: number = new Date().getFullYear()
 </script>
 
 <!-- MARKUP -->
-<Header />
-
 <main>
-  <h1>Hello {name}!</h1>
-  <button on:click={onClick}>clicked {times}</button>
-</main>
+  <Header>WIP</Header>
 
-<Footer />
+  <div>
+    <Aside />
+    <Divider />
+    <Article />
+  </div>
+
+  <Footer>WIP - {year}</Footer>
+</main>
 
 <!-- CSS -->
 <style>
   main {
-    text-align: center;
-    margin: 0 auto;
-    padding: 1em;
+    grid-template-rows: auto 1fr auto;
+    display: grid;
+    height: 100%;
+    gap: 1rem;
   }
 
-  h1 {
-    text-transform: uppercase;
-    font-weight: 100;
-    color: tomato;
-    font-size: 4em;
+  div {
+    grid-template-columns: auto auto 1fr;
+    max-width: 1280px;
+    padding: 0 1rem;
+    margin: 0 auto;
+    display: grid;
+    width: 100%;
+    gap: 1rem;
   }
 </style>

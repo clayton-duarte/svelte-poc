@@ -10,8 +10,9 @@
 <!-- CSS -->
 <style>
   footer {
+    background: var(--tomato);
     text-align: center;
-    margin: 0 auto;
-    padding: 1em;
+    color: var(--snow);
+    padding: 1rem;
   }
 </style>
